@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Design Dynasty Graphics Technology</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="creatige.jpg" alt="Design Dynasty Graphics Technology" class="logo" />
+    </div>
+    <h1 class="site-title">Design Dynasty</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h2>Welcome to Design Dynasty</h2>
+    <p>Your Creative Partner in Design</p>
+    <input type="search" placeholder="Search services...">
+  </section>
+
+  <!-- Slideshow Section -->
+  <section id="slideshow">
+    <div class="slideshow-container">
+      <div class="slide fade"><img src="creatige.jpg" alt="Work 1" /></div>
+      <div class="slide fade"><img src="Sunday.jpg" alt="Work 2" /></div>
+      <div class="slide fade"><img src="WPS_8016.jpg" alt="Work 3" /></div>
+    </div>
+    <div class="dot-container">
+      <span class="dot" onclick="showSlide(0)"></span>
+      <span class="dot" onclick="showSlide(1)"></span>
+      <span class="dot" onclick="showSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Our Work</h2>
+    <div class="portfolio-gallery">
+      <div class="portfolio-item"><img src="WPS_8016.jpg" alt="Design 1" /></div>
+      <div class="portfolio-item"><img src="Wedding card jpg.jpg" alt="Design 2" /></div>
+      <div class="portfolio-item"><img src="Dynassty.jpg" alt="Design 3" /></div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section id="videos">
+    <h2>Video Showcase</h2>
+    <div class="video-gallery">
+      <div class="video-item">
+        <iframe src="WhatsApp Video 2025-03-19 at 17.06.52_5343fca1.mp4" title="Solomon Sunday" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Design Dynasty Graphics Technology. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 3000);
+    }
+
+    function showSlide(n) {
+      slideIndex = n;
+      showSlides();
+    }
+  </script>
+</body>
+</html>
